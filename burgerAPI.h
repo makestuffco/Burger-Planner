@@ -11,4 +11,4 @@ struct Product
 };
 
 extern std::ostream& operator<<(std::ostream& out, Product const& p);
-extern std::vector<Product> getBestOption(std::vector<Product> const& products, double const quantity_required);
+extern std::vector<Product> getBestOption(std::vector<Product> const& products, double const& quantity_required);

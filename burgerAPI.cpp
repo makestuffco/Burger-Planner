@@ -35,15 +35,15 @@ auto getOptions(vector<Product> const& products, double const& quantity_required
     {
         vector<Product> current_state { passthrough.begin(), passthrough.end() };
         current_state.push_back(product);
-        auto sub_ops = getOptions(products, quantity_required, current_state);
+        auto const sub_ops = getOptions(products, quantity_required, current_state);
         output.insert(output.end(), sub_ops.begin(), sub_ops.end());
     }
     return output;
 }
 
-vector<Product> getBestOption(vector<Product> const& products, double const quantity_required)
+vector<Product> getBestOption(vector<Product> const& products, double const& quantity_required)
 {
-    const auto options = getOptions(products, quantity_required);
+    auto const options = getOptions(products, quantity_required);
     vector<Product> best {{"Error: ", 0xffff, 0xffff,"you shouldn't be able to see this"}};
     for(auto const& option : options)
         if(getPrice(option) < getPrice(best))
