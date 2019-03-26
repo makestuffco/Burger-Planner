@@ -18,9 +18,11 @@ template<typename T>auto print(std::vector<T> const& vect)
 int main()
 {
     vector<Product> beef_products = {{
-        {"1lb beef", 1, 5, "link to 1lb beef"},
-        {"2.25lb beef", 2.25, 8, "link to 2.25 beef"},
-        {"5lb beef", 5, 15, "link to 5lb beef"}
+        {"1lb beef", 1, 3.28, "link to 1lb beef"},
+        {"2.25lb beef", 2.25, 7.48, "link to 2.25 beef"},
+        {"3lb beef", 3, 9.64, "link to 3lb beef"},
+        {"5lb beef", 5, 11.34, "link to 5lb beef"},
+        {"10lb beef", 10, 19.88, "link to 10lb beef"}
     }};
 
     vector<Product> buns_products = {{
@@ -28,7 +30,7 @@ int main()
         {"12 Pack", 12, 5, "link to 12 pack"}
     }};
 
-    for(double burger = 1; burger < 40; burger++)
+    for(double burger = 1; burger < 50; burger++)
     {
         auto beef = getBestOption(beef_products, burger/4);
         auto buns = getBestOption(buns_products, burger);
