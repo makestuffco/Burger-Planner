@@ -15,7 +15,7 @@ template<typename T>auto print(std::vector<T> const& vect)
     cout << '\n';
 }
 
-int main()
+int main(int argc, char **argv)
 {
     vector<Product> beef_products = {{
         {"1lb beef", 1, 3.28, "link to 1lb beef"},
@@ -29,8 +29,24 @@ int main()
         {"8 Pack", 8, 2.48, "link to 8 pack"},
         {"12 Pack", 12, 2.78, "link to 12 pack"}
     }};
+    if(argc == 1)
+    {
+        for(double burger = 1; burger < 50; burger++)
+        {
+            auto beef = getBestOption(beef_products, burger/4);
+            auto buns = getBestOption(buns_products, burger);
+            
+            cout << burger << '\t';
+            print(beef);
 
-    for(double burger = 1; burger < 50; burger++)
+            cout << '\t';
+            print(buns);
+            cout << '\n';
+        }
+        return 0;
+    }
+    int const burgers_required = stoi(argv[1]);
+    for(double burger = burgers_required; burger < burgers_required + 5; burger++)
     {
         auto beef = getBestOption(beef_products, burger/4);
         auto buns = getBestOption(buns_products, burger);
