@@ -26,8 +26,8 @@ int main()
     }};
 
     vector<Product> buns_products = {{
-        {"8 Pack", 8, 3, "link to 8 pack"},
-        {"12 Pack", 12, 5, "link to 12 pack"}
+        {"8 Pack", 8, 2.48, "link to 8 pack"},
+        {"12 Pack", 12, 2.78, "link to 12 pack"}
     }};
 
     for(double burger = 1; burger < 50; burger++)
